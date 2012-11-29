@@ -18,7 +18,7 @@ our @ISA = qw(Exporter);
 our %EXPORT_TAGS = ( 'all' => [ qw() ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw();
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 my ($job_pid, %_data);
 $SIG{TERM} = $SIG{INT} = sub {
@@ -76,7 +76,7 @@ sub run {
 	my ($self, $cmd, @argv) = @_;
 	
 	if ($self->only_me and $self->is_running($self->runfile_name($cmd))) {
-		$self->stderr("Proccess is already running ");
+		$self->stderr("Proccess is already running");
 		$self->failed(1);
 		return 0;
 	}	
@@ -110,6 +110,7 @@ sub run {
 	$chld_stdin->close;
 	
 	waitpid($job_pid, 0);
+	
 	if ($std_error) {
 		$self->stderr($std_error);
 		if ($self->mail_stderr) {

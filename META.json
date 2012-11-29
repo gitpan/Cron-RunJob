@@ -1,7 +1,7 @@
 {
    "abstract" : "Monitor Cron Jobs",
    "author" : [
-      "Kiel Stirling <kiel@>"
+      "Kiel Stirling <kielstr@>cpan.org"
    ],
    "dynamic_config" : 1,
    "generated_by" : "ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.112150",
@@ -31,9 +31,11 @@
          }
       },
       "runtime" : {
-         "requires" : {}
+         "requires" : {
+            "Mail::Mailer" : "1"
+         }
       }
    },
    "release_status" : "stable",
-   "version" : "0.05"
+   "version" : "0.06"
 }

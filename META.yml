@@ -1,7 +1,7 @@
 ---
 abstract: 'Monitor Cron Jobs'
 author:
-  - 'Kiel Stirling <kiel@>'
+  - 'Kiel Stirling <kielstr@>cpan.org'
 build_requires:
   ExtUtils::MakeMaker: 0
 configure_requires:
@@ -17,5 +17,6 @@ no_index:
   directory:
     - t
     - inc
-requires: {}
-version: 0.05
+requires:
+  Mail::Mailer: 1
+version: 0.06
